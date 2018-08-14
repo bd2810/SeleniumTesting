@@ -11,8 +11,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.GooglePage;
-
 public class GoogleTest {
 	
 	private WebDriver driver;
@@ -29,6 +27,7 @@ public class GoogleTest {
     public void googleTest() throws InterruptedException {
         google.goTo();
         google.searchFor("automation");
+        System.out.println(driver.getTitle());
         Assert.assertTrue(google.getResults().size() >= 10);
     }
     
