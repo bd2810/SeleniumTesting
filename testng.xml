@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="SeleniumTesting" verbose="1" >
+  <test name="Selenium UI Tests" >
+    <classes>
+       <class name="com.personal.bhavik.seleniumTest.shutterfly.tests.HomePageTopPanelTests" />
+    </classes>
+  </test>
+ </suite>
