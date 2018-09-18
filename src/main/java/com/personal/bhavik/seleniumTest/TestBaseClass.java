@@ -1,5 +1,7 @@
 package com.personal.bhavik.seleniumTest;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -19,7 +21,7 @@ public class TestBaseClass {
 		
 	}
 	
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		
         return driver;
     }
@@ -30,12 +32,14 @@ public class TestBaseClass {
 			
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			driver = new ChromeDriver();
+			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 			driver.get(URL);
+			Thread.sleep(2000);
 			
 		} catch (Throwable e) {
 
-            logger.info("Caught in ciqSeleniumProcessingUtilities");
+            logger.info("Caught in SeleniumUtilities");
             e.printStackTrace();
 
         }
